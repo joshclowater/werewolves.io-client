@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with invalid length returns invalid length errors 1`] = `
+Object {
+  "gameId": "Game id must be 5 characters",
+  "name": "Name must be less than 12 characters",
+}
+`;
+
+exports[`with no values returns non empty errors 1`] = `
+Object {
+  "gameId": "Please enter a game id",
+  "name": "Please enter a name",
+}
+`;

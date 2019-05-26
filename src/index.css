@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #222222;
+  color: #ffffff;
+  cursor: default;
+  font-size: 2.3vh;
+}

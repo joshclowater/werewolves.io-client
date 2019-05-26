@@ -1,0 +1,65 @@
+{
+  "name": "party-mouth-client",
+  "version": "0.1.0-SNAPSHOT",
+  "author": "Josh Clowater <josh.clowater@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshclowater/partymouth-client"
+  },
+  "license": "UNLICENCED",
+  "engines": {
+    "node": "10",
+    "npm": "6"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.0",
+    "redux-saga": "^1.0.2",
+    "redux-starter-kit": "^0.5.1",
+    "socket.io-client": "^2.2.0",
+    "socketio-wildcard": "^2.0.0",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.3.0",
+    "jest-styled-components": "^7.0.0-2",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
+    "react-test-renderer": "^16.8.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "node_modules/eslint/bin/eslint.js ./src",
+    "test": "react-scripts test",
+    "test:coverage": "npm run test -- --coverage --watchAll=false"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run lint && npm run test:coverage"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
+}

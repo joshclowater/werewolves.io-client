@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroupField renders correctly 1`] = `
+<Field
+  anyProp="mock prop"
+  component={[Function]}
+/>
+`;
+
+exports[`RenderField renders correctly 1`] = `
+<FieldWrapper
+  error="mock error"
+  inputName="mockName"
+  touched={true}
+  warning="mock warning"
+>
+  <styled.div
+    key="mock value"
+  >
+    <input
+      checked={true}
+      disabled={true}
+      id="mock value"
+      name="mockName"
+      type="radio"
+      value="mock value"
+    />
+    <label
+      htmlFor="mock value"
+    >
+      mock value
+    </label>
+  </styled.div>
+  <styled.div
+    key="mock value 2"
+  >
+    <input
+      checked={false}
+      disabled={true}
+      id="mock value 2"
+      name="mockName"
+      type="radio"
+      value="mock value 2"
+    />
+    <label
+      htmlFor="mock value 2"
+    >
+      mock value 2
+    </label>
+  </styled.div>
+</FieldWrapper>
+`;
