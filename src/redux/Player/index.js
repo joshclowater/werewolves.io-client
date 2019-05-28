@@ -39,5 +39,8 @@ export default createReducer(initialState, {
   'PLAYER/DAY_STARTED': (state, { villagers }) => {
     state.status = 'day';
     state.villagers = villagers;
+  },
+  'PLAYER/SUBMITTED_VILLAGER_PICK': state => {
+    state.status = 'villager-pick-submitted';
   }
 });

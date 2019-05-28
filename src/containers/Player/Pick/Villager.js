@@ -13,6 +13,7 @@ const VillagerForm = reduxForm({
 
 export function mapStateToProps({ player }) {
   return {
+    id: 'villagerPick',
     pickOptions: player.villagers
   };
 }

@@ -2,21 +2,19 @@
 
 exports[`Renders correctly 1`] = `
 .c0 {
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   padding: 1vh 1.8vh;
   font-size: 2.5vh;
   border-radius: 0.6vh;
   cursor: pointer;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #199b94;
   -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .c0:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #56DBC8;
 }
 
 <button
@@ -26,14 +24,13 @@ exports[`Renders correctly 1`] = `
 
 exports[`disabled Renders correctly 1`] = `
 .c0 {
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   padding: 1vh 1.8vh;
   font-size: 2.5vh;
   border-radius: 0.6vh;
   cursor: not-allowed;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #199b94;
   opacity: 0.65;
 }
 

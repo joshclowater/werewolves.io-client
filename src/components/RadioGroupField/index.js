@@ -27,12 +27,14 @@ export const RenderField = ({
           type="radio"
           {...input}
           {...rest}
-          id={option}
+          id={`${option}Option`}
           value={option}
           checked={option === input.value}
           disabled={!!submitting}
         />
-        <label htmlFor={option}>{option}</label>
+        <label id={`${option}Label`} htmlFor={`${option}Option`}>
+          {option}
+        </label>
       </Radio>
     ))}
   </FieldWrapper>

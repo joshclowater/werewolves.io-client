@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Loading from 'src/components/Loading';
 
-export default function(props) {
+export default function({ message, ...rest }) {
   return (
-    <Fragment>
+    <div {...rest}>
       <Loading />
-      {props.message}
-    </Fragment>
+      {message}
+    </div>
   );
 }

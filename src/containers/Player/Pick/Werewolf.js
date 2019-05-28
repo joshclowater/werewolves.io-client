@@ -13,6 +13,7 @@ const WerewolfPickForm = reduxForm({
 
 export function mapStateToProps({ player }) {
   return {
+    id: 'werewolfPick',
     pickOptions: player.villagers
   };
 }

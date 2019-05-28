@@ -8,7 +8,7 @@ export default styled.button`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
 
   color: #fff;
-  background-color: #199B94;
+  background-color: #199b94;
 
   ${props =>
     props.disabled

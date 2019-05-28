@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders correctly 1`] = `
-<Fragment>
+<div>
   <styled.div />
   mock message
-</Fragment>
+</div>
 `;

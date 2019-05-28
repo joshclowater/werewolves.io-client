@@ -25,7 +25,7 @@ exports[`renders correctly 1`] = `
         "$$typeof": Symbol(react.memo),
         "WrappedComponent": [Function],
         "compare": null,
-        "displayName": "Connect(Play)",
+        "displayName": "Connect(Player)",
         "type": [Function],
       }
     }

@@ -16,7 +16,7 @@ const Instructions = styled.div`
 
 export default props => {
   return (
-    <Wrapper>
+    <Wrapper id={props.id}>
       <Instructions>Pick who you choose to kill</Instructions>
       <form onSubmit={props.handleSubmit}>
         <RadioGroupField name="pick" options={props.pickOptions} />

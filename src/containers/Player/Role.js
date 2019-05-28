@@ -41,7 +41,7 @@ export default function({ role }) {
   return (
     <Wrapper>
       <Avatar src={avatar} alt={alt} />
-      <Description>{description}</Description>
+      <Description id="description">{description}</Description>
     </Wrapper>
   );
 }

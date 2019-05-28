@@ -20,13 +20,14 @@ exports[`RenderField renders correctly 1`] = `
     <input
       checked={true}
       disabled={true}
-      id="mock value"
+      id="mock valueOption"
       name="mockName"
       type="radio"
       value="mock value"
     />
     <label
-      htmlFor="mock value"
+      htmlFor="mock valueOption"
+      id="mock valueLabel"
     >
       mock value
     </label>
@@ -37,13 +38,14 @@ exports[`RenderField renders correctly 1`] = `
     <input
       checked={false}
       disabled={true}
-      id="mock value 2"
+      id="mock value 2Option"
       name="mockName"
       type="radio"
       value="mock value 2"
     />
     <label
-      htmlFor="mock value 2"
+      htmlFor="mock value 2Option"
+      id="mock value 2Label"
     >
       mock value 2
     </label>

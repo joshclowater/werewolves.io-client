@@ -22,8 +22,7 @@ function* onNightStarted() {
 }
 
 function* onSubmittedWolfPick() {
-  const werewolfPicks = yield select(state => state.host.werewolfPicks);
-  const werewolves = yield select(state => state.host.werewolves);
+  const { werewolfPicks, werewolves } = yield select(state => state.host);
   if (Object.values(werewolfPicks).length === werewolves.length) {
     socket.emit('END_WEREWOLVES_PICK');
   }
@@ -34,11 +33,24 @@ function* onWerewolvesPicksEnded() {
   socket.emit('START_DAY');
 }
 
+function* onSubmittedVillagerPick() {
+  const { villagerPicks, players, deceased } = yield select(
+    state => state.host
+  );
+  if (
+    Object.values(villagerPicks).length ===
+    players.length - deceased.length
+  ) {
+    socket.emit('END_DAY');
+  }
+}
+
 export default [
   takeEvery([startingGame], onStartingGame),
   takeEvery('HOST/STARTED_GAME', onStartedGame),
   takeEvery('HOST/ROUND_STARTED', onHostStarted),
   takeEvery('HOST/NIGHT_STARTED', onNightStarted),
   takeEvery('HOST/SUBMITTED_WEREWOLF_PICK', onSubmittedWolfPick),
-  takeEvery('HOST/WEREWOLVES_PICKS_ENDED', onWerewolvesPicksEnded)
+  takeEvery('HOST/WEREWOLVES_PICKS_ENDED', onWerewolvesPicksEnded),
+  takeEvery('HOST/SUBMITTED_VILLAGER_PICK', onSubmittedVillagerPick)
 ];

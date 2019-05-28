@@ -23,7 +23,7 @@ export default class Host extends Component {
     } else if (this.props.status === 'waiting-for-players-to-connect') {
       content = <WaitingForPlayersToConnect />;
     } else if (this.props.status === 'starting-game') {
-      content = <LoadingMessage message="Starting game" />;
+      content = <LoadingMessage id="startingGame" message="Starting game" />;
     } else if (this.props.status === 'round-started') {
       content =
         "The round has started. Look at your device to see your role. Don't let anyone else see your role.\n Night will begin in ten seconds.";
@@ -32,8 +32,11 @@ export default class Host extends Component {
     } else if (this.props.status === 'werewolves-picking') {
       content = 'Werewolves open your eyes. Decide who you are going to kill.';
     } else if (this.props.status === 'werewolves-picking-ended') {
-      content =
-        'Werewolves close your eyes. Night will continue in five seconds.';
+      content = (
+        <div id="werewolvesPickEnded">
+          Werewolves close your eyes. Night will continue in five seconds.
+        </div>
+      );
     } else if (this.props.status === 'day') {
       content = <Day />;
     } else {

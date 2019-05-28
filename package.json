@@ -31,9 +31,12 @@
     "enzyme-to-json": "^3.3.5",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^2.3.0",
+    "jest-image-snapshot": "^2.8.2",
+    "jest-puppeteer": "^4.1.1",
     "jest-styled-components": "^7.0.0-2",
     "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
+    "puppeteer": "^1.17.0",
     "react-test-renderer": "^16.8.6"
   },
   "scripts": {
@@ -41,7 +44,8 @@
     "build": "react-scripts build",
     "lint": "node_modules/eslint/bin/eslint.js ./src",
     "test": "react-scripts test",
-    "test:coverage": "npm run test -- --coverage --watchAll=false"
+    "test:coverage": "npm run test -- --coverage --watchAll=false",
+    "test:e2e": "node_modules/jest/bin/jest.js -c ./e2e/jest-e2e-config.json e2e/**"
   },
   "husky": {
     "hooks": {

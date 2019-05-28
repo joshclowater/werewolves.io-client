@@ -41,7 +41,7 @@ export default createReducer(initialState, {
     state.werewolfPicks[playerName] = pick;
   },
   'HOST/WEREWOLVES_PICKS_ENDED': state => {
-    state = 'werewolves-picking-ended';
+    state.status = 'werewolves-picking-ended';
   },
   'HOST/DAY_STARTED': (state, { newlyDeceased }) => {
     state.status = 'day';

@@ -24,9 +24,8 @@ const Player = styled.div`
 `;
 
 export default function({ newlyDeceased, deceased, living }) {
-  console.log('Play', deceased, living);
   return (
-    <Wrapper>
+    <Wrapper id="day">
       <NewlyDeceased id="newlyDeceased">
         {newlyDeceased ? newlyDeceased : 'Nobody'}
         {` was killed by werewolves last night`}

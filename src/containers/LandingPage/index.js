@@ -55,7 +55,26 @@ export default function LandingPage() {
       </Body>
       {/* TODO instructions, link to https://www.wikihow.com/Play-Werewolf-(Party-Game) ? */}
       <Footer>
-        Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>.
+        {/* eslint-disable-next-line */}
+        Icons made by{' '}
+        <a
+          href="https://www.flaticon.com/authors/roundicons"
+          title="Roundicons"
+        >
+          Roundicons
+        </a>{' '}
+        from{' '}
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com
+        </a>{' '}
+        are licensed by{' '}
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+        >
+          CC 3.0 BY
+        </a>
+        .
       </Footer>
     </Wrapper>
   );

@@ -20,6 +20,10 @@ Launches the test runner in the interactive watch mode.
 
 Runs all of the tests and outputs a code coverage report.
 
+### `npm run test:e2e`
+
+Runs the end to end tests.
+
 ### `npm run build`
 
 Builds the app for production in the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.

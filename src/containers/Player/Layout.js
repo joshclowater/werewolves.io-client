@@ -26,15 +26,22 @@ export default class Player extends Component {
     } else if (this.props.status === 'waiting-to-join') {
       content = <ConnectToGame />;
     } else if (this.props.status === 'waiting-for-game-start') {
-      content = 'Connected. Waiting for game to start.';
+      content = <div id="connected">Connected. Waiting for game to start.</div>;
     } else if (this.props.status === 'round-started') {
       content = <RoundStarted />;
     } else if (this.props.status === 'night') {
-      content = 'Close your eyes until you are told to open them again.';
+      content = (
+        <div id="night">
+          Close your eyes until you are told to open them again.
+        </div>
+      );
     } else if (this.props.status === 'werewolves-picking') {
       content = <WerewolfPick />;
-    } else if (this.props.status === 'werewolf-pick-submitted') {
-      content = 'Submitted pick';
+    } else if (
+      this.props.status === 'werewolf-pick-submitted' ||
+      this.props.status === 'villager-pick-submitted'
+    ) {
+      content = <div id="submittedPick">Submitted pick</div>;
     } else if (this.props.status === 'deceased') {
       content = <Role role={this.props.status} />;
     } else if (this.props.status === 'day') {
