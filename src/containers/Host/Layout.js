@@ -6,6 +6,7 @@ import CenteredComponent from 'src/components/Centered';
 import LoadingMessage from 'src/components/LoadingMessage';
 import Day from './Day';
 import WaitingForPlayersToConnect from './WaitingForPlayersToConnect';
+import Win from './Win';
 
 const CenteredScreen = styled(CenteredComponent)`
   height: 100vh;
@@ -39,6 +40,8 @@ export default class Host extends Component {
       );
     } else if (this.props.status === 'day') {
       content = <Day />;
+    } else if (this.props.status === 'win') {
+      content = <Win />;
     } else {
       throw new Error('invalid status', this.props.status);
     }

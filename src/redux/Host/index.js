@@ -51,5 +51,11 @@ export default createReducer(initialState, {
   },
   'HOST/SUBMITTED_VILLAGER_PICK': (state, { playerName, pick }) => {
     state.villagerPicks[playerName] = pick;
+  },
+  'HOST/ROUND_ENDED': (state, { win, newlyDeceased }) => {
+    state.status = 'win';
+    state.winType = win;
+    state.newlyDeceased = newlyDeceased;
+    state.deceased.unshift(newlyDeceased);
   }
 });
