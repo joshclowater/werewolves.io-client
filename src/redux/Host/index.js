@@ -53,7 +53,7 @@ export default createReducer(initialState, {
     state.villagerPicks[playerName] = pick;
   },
   'HOST/ROUND_ENDED': (state, { win, newlyDeceased }) => {
-    state.status = 'win';
+    state.status = 'round-over';
     state.winType = win;
     state.newlyDeceased = newlyDeceased;
     state.deceased.unshift(newlyDeceased);

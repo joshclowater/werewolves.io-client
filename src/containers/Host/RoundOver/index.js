@@ -4,7 +4,7 @@ import Layout from './Layout';
 
 export function mapStateToProps({ host }) {
   return {
-    win: host.winType,
+    winType: host.winType,
     newlyDeceased: host.newlyDeceased,
     deceased: host.deceased,
     villagers: host.villagers,

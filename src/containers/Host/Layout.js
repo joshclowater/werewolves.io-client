@@ -5,8 +5,8 @@ import { initSocket } from 'src/socket';
 import CenteredComponent from 'src/components/Centered';
 import LoadingMessage from 'src/components/LoadingMessage';
 import Day from './Day';
+import RoundOver from './RoundOver';
 import WaitingForPlayersToConnect from './WaitingForPlayersToConnect';
-import Win from './Win';
 
 const CenteredScreen = styled(CenteredComponent)`
   height: 100vh;
@@ -40,8 +40,8 @@ export default class Host extends Component {
       );
     } else if (this.props.status === 'day') {
       content = <Day />;
-    } else if (this.props.status === 'win') {
-      content = <Win />;
+    } else if (this.props.status === 'round-over') {
+      content = <RoundOver />;
     } else {
       throw new Error('invalid status', this.props.status);
     }

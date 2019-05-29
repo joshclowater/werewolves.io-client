@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from 'src/components/Button';
 
 const Wrapper = styled.div`
   text-align: center;
@@ -23,8 +24,12 @@ const Player = styled.div`
   margin-bottom: 1.5vh;
 `;
 
+const refreshPage = () => {
+  window.location.reload(false);
+};
+
 export default function({
-  win,
+  winType,
   newlyDeceased,
   deceased,
   villagers,
@@ -37,11 +42,14 @@ export default function({
     newlyDeceasedString = 'Nobody';
   }
   return (
-    <Wrapper id="win">
+    <Wrapper id="roundOver">
+      {winType === 'werewolves-win'
+        ? 'You could not kill the werewolves in time. Werewolves win!'
+        : 'You survived and killed the werewolves. Villagers win!'}
       <NewlyDeceased id="newlyDeceased">
         {newlyDeceasedString}
         {newlyDeceased && newlyDeceased.length > 1 ? ' were ' : ' was '}
-        {'killed by the town last night'}
+        {'killed by the town today'}
       </NewlyDeceased>
       <Players id="deceased">
         <PlayersHeader>All deceased:</PlayersHeader>
@@ -61,6 +69,9 @@ export default function({
           <Player key={player}>{player}</Player>
         ))}
       </Players>
+      <Button id="playAgain" onClick={refreshPage}>
+        Play again
+      </Button>
     </Wrapper>
   );
 }

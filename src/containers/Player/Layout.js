@@ -4,8 +4,9 @@ import { initSocket } from 'src/socket';
 
 import CenteredComponent from 'src/components/Centered';
 import LoadingMessage from 'src/components/LoadingMessage';
+import PlayerRole from 'src/components/PlayerRole';
 import ConnectToGame from './ConnectToGame';
-import Role from './Role';
+import RoundOver from './RoundOver';
 import RoundStarted from './RoundStarted';
 import VillagerPick from './Pick/Villager';
 import WerewolfPick from './Pick/Werewolf';
@@ -43,9 +44,11 @@ export default class Player extends Component {
     ) {
       content = <div id="submittedPick">Submitted pick</div>;
     } else if (this.props.status === 'deceased') {
-      content = <Role role={this.props.status} />;
+      content = <PlayerRole role={this.props.status} />;
     } else if (this.props.status === 'day') {
       content = <VillagerPick />;
+    } else if (this.props.status === 'round-over') {
+      content = <RoundOver />;
     } else {
       throw new Error('invalid status', this.props.status);
     }

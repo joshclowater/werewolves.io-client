@@ -42,5 +42,11 @@ export default createReducer(initialState, {
   },
   'PLAYER/SUBMITTED_VILLAGER_PICK': state => {
     state.status = 'villager-pick-submitted';
+  },
+  'PLAYER/ROUND_ENDED': (state, { win }) => {
+    state.status = 'round-over';
+    state.win =
+      (state.role === 'werewolf' && win === 'werewolves-win') ||
+      (state.role === 'villager' && win === 'villagers-win')
   }
 });
