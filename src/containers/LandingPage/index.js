@@ -55,19 +55,18 @@ export default function LandingPage() {
       </Body>
       {/* TODO instructions, link to https://www.wikihow.com/Play-Werewolf-(Party-Game) ? */}
       <Footer>
-        {/* eslint-disable-next-line */}
-        Icons made by{' '}
+        {'Icons made by '}
         <a
           href="https://www.flaticon.com/authors/roundicons"
           title="Roundicons"
         >
           Roundicons
-        </a>{' '}
-        from{' '}
+        </a>
+        {' from '}
         <a href="https://www.flaticon.com/" title="Flaticon">
           www.flaticon.com
-        </a>{' '}
-        are licensed by{' '}
+        </a>
+        {' are licensed by '}
         <a
           href="http://creativecommons.org/licenses/by/3.0/"
           title="Creative Commons BY 3.0"

@@ -8,10 +8,11 @@ export let socket;
 export const initSocket = type => {
   if (socket === undefined) {
     const options = { query: { type, id: Math.random() } };
-    console.log('process.argv', process.argv, process.env);
     // You can replace "localhost" with IP address for local multi device development
     socket = io(
-      process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://socket.werewolves.io',
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000'
+        : 'https://socket.werewolves.io',
       options
     );
     const patch = wildcard(io.Manager);

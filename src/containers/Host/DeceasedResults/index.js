@@ -4,6 +4,7 @@ import Layout from './Layout';
 
 export function mapStateToProps({ host }) {
   return {
+    status: host.status,
     newlyDeceased: host.newlyDeceased,
     deceased: host.deceased,
     living: Object.values(host.players)

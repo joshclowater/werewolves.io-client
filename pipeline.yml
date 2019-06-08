@@ -13,6 +13,7 @@ Parameters:
   GithubOAuthToken:
     Type: String
     Description: "Github personal access token"
+    NoEcho: true
   
 Resources:
   CodePipeline:

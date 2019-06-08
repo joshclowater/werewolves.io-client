@@ -45,6 +45,11 @@ function* onSubmittedVillagerPick() {
   }
 }
 
+function* onDayEnded() {
+  yield delay(5000);
+  socket.emit('START_NIGHT');
+}
+
 export default [
   takeEvery([startingGame], onStartingGame),
   takeEvery('HOST/STARTED_GAME', onStartedGame),
@@ -52,5 +57,6 @@ export default [
   takeEvery('HOST/NIGHT_STARTED', onNightStarted),
   takeEvery('HOST/SUBMITTED_WEREWOLF_PICK', onSubmittedWolfPick),
   takeEvery('HOST/WEREWOLVES_PICKS_ENDED', onWerewolvesPicksEnded),
-  takeEvery('HOST/SUBMITTED_VILLAGER_PICK', onSubmittedVillagerPick)
+  takeEvery('HOST/SUBMITTED_VILLAGER_PICK', onSubmittedVillagerPick),
+  takeEvery('HOST/DAY_ENDED', onDayEnded)
 ];

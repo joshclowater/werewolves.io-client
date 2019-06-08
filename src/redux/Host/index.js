@@ -46,11 +46,16 @@ export default createReducer(initialState, {
   'HOST/DAY_STARTED': (state, { newlyDeceased }) => {
     state.status = 'day';
     state.newlyDeceased = newlyDeceased;
-    state.deceased.unshift(newlyDeceased);
+    state.deceased = newlyDeceased.concat(state.deceased);
     state.villagerPicks = {};
   },
   'HOST/SUBMITTED_VILLAGER_PICK': (state, { playerName, pick }) => {
     state.villagerPicks[playerName] = pick;
+  },
+  'HOST/DAY_ENDED': (state, { newlyDeceased }) => {
+    state.status = 'day-ended';
+    state.newlyDeceased = newlyDeceased;
+    state.deceased = newlyDeceased.concat(state.deceased);
   },
   'HOST/ROUND_ENDED': (state, { win, newlyDeceased }) => {
     state.status = 'round-over';

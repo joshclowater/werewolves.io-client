@@ -47,6 +47,8 @@ export default class Player extends Component {
       content = <PlayerRole role={this.props.status} />;
     } else if (this.props.status === 'day') {
       content = <VillagerPick />;
+    } else if (this.props.status === 'day-ended') {
+      content = <div id="dayEnded">The day has ended. Showing results.</div>;
     } else if (this.props.status === 'round-over') {
       content = <RoundOver />;
     } else {

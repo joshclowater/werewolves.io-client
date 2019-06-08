@@ -6,9 +6,14 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const NewlyDeceased = styled.div`
+const Win = styled.div`
   font-size: 4vh;
-  margin-bottom: 4vh;
+  margin-bottom: 2vh;
+`;
+
+const NewlyDeceased = styled.div`
+  font-size: 3vh;
+  margin-bottom: 2vh;
 `;
 
 const Players = styled.div`
@@ -43,9 +48,11 @@ export default function({
   }
   return (
     <Wrapper id="roundOver">
-      {winType === 'werewolves-win'
-        ? 'You could not kill the werewolves in time. Werewolves win!'
-        : 'You survived and killed the werewolves. Villagers win!'}
+      <Win id="win">
+        {winType === 'werewolves-win'
+          ? 'You could not kill the werewolves in time. Werewolves win!'
+          : 'You survived and killed the werewolves. Villagers win!'}
+      </Win>
       <NewlyDeceased id="newlyDeceased">
         {newlyDeceasedString}
         {newlyDeceased && newlyDeceased.length > 1 ? ' were ' : ' was '}
@@ -54,19 +61,25 @@ export default function({
       <Players id="deceased">
         <PlayersHeader>All deceased:</PlayersHeader>
         {deceased.map(player => (
-          <Player key={player}>{player}</Player>
+          <Player key={player} className="deceased">
+            {player}
+          </Player>
         ))}
       </Players>
       <Players id="villagers">
         <PlayersHeader>Villagers:</PlayersHeader>
         {villagers.map(player => (
-          <Player key={player}>{player}</Player>
+          <Player key={player} className="villager">
+            {player}
+          </Player>
         ))}
       </Players>
       <Players id="werewolves">
         <PlayersHeader>Werewolves:</PlayersHeader>
         {werewolves.map(player => (
-          <Player key={player}>{player}</Player>
+          <Player key={player} className="werewolf">
+            {player}
+          </Player>
         ))}
       </Players>
       <Button id="playAgain" onClick={refreshPage}>
