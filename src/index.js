@@ -7,9 +7,22 @@ import App from 'src/containers/App';
 
 import './index.css';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+// const store = configureAppStore();
+
+const render = Component => {
+  return ReactDOM.render(
+    <Provider store={store}>
+      <Component />
+    </Provider>,
+    document.getElementById('root')
+  );
+};
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('src/containers/App', () => {
+    const NextApp = require('src/containers/App').default;
+    render(NextApp);
+  });
+}

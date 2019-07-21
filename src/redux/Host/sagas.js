@@ -12,12 +12,12 @@ function onStartedGame() {
 }
 
 function* onHostStarted() {
-  yield delay(10000);
+  yield delay(15000);
   socket.emit('START_NIGHT');
 }
 
 function* onNightStarted() {
-  yield delay(5000);
+  yield delay(10000);
   socket.emit('START_WEREWOLVES_PICK');
 }
 
@@ -29,7 +29,7 @@ function* onSubmittedWolfPick() {
 }
 
 function* onWerewolvesPicksEnded() {
-  yield delay(5000);
+  yield delay(10000);
   socket.emit('START_DAY');
 }
 

@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { initSocket } from 'src/socket';
 
-import CenteredComponent from 'src/components/Centered';
+import CenteredScreen from 'src/components/Centered/CenteredScreen';
 import LoadingMessage from 'src/components/LoadingMessage';
 import DeceasedResults from './DeceasedResults';
+import Night from './Night';
 import RoundOver from './RoundOver';
+import RoundStarted from './RoundStarted';
 import WaitingForPlayersToConnect from './WaitingForPlayersToConnect';
-
-const CenteredScreen = styled(CenteredComponent)`
-  height: 100vh;
-`;
+import WerewolvesPick from './WerewolvesPick';
+import WerewolvesPickEnded from './WerewolvesPickEnded';
 
 export default class Host extends Component {
   componentDidMount() {
@@ -18,47 +17,28 @@ export default class Host extends Component {
   }
 
   render() {
+    const { status } = this.props;
     let content;
-    if (this.props.status === 'connecting-to-server') {
+    if (status === 'connecting-to-server') {
       content = <LoadingMessage message="Connecting to server" />;
-    } else if (this.props.status === 'waiting-for-players-to-connect') {
+    } else if (status === 'waiting-for-players-to-connect') {
       content = <WaitingForPlayersToConnect />;
-    } else if (this.props.status === 'starting-game') {
+    } else if (status === 'starting-game') {
       content = <LoadingMessage id="startingGame" message="Starting game" />;
-    } else if (this.props.status === 'round-started') {
-      content = (
-        <div id="roundStarted">
-          The round has started. Look at your device to see your role. Don't let
-          &nnbsp;anyone else see your role.\n Night will begin in ten seconds.
-        </div>
-      );
-    } else if (this.props.status === 'night') {
-      content = (
-        <div id="night">
-          Everyone close their eyes. Night will begin in five seconds.
-        </div>
-      );
-    } else if (this.props.status === 'werewolves-picking') {
-      content = (
-        <div id="werewolvesPick">
-          Werewolves open your eyes. Decide who you are going to kill.
-        </div>
-      );
-    } else if (this.props.status === 'werewolves-picking-ended') {
-      content = (
-        <div id="werewolvesPickEnded">
-          Werewolves close your eyes. Night will continue in five seconds.
-        </div>
-      );
-    } else if (
-      this.props.status === 'day' ||
-      this.props.status === 'day-ended'
-    ) {
+    } else if (status === 'round-started') {
+      content = <RoundStarted />;
+    } else if (status === 'night') {
+      content = <Night />;
+    } else if (status === 'werewolves-picking') {
+      content = <WerewolvesPick />;
+    } else if (status === 'werewolves-picking-ended') {
+      content = <WerewolvesPickEnded />;
+    } else if (status === 'day' || status === 'day-ended') {
       content = <DeceasedResults />;
-    } else if (this.props.status === 'round-over') {
+    } else if (status === 'round-over') {
       content = <RoundOver />;
     } else {
-      throw new Error('invalid status', this.props.status);
+      throw new Error('Invalid status for <Host />: ', status);
     }
     return <CenteredScreen>{content}</CenteredScreen>;
   }

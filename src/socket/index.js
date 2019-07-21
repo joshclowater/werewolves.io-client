@@ -23,7 +23,7 @@ export const initSocket = type => {
         ...packet.data[1]
       });
     });
-  } else {
+  } else if (!module.hot) {
     throw new Error('Socket is already defined', socket);
   }
 };

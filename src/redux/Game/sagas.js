@@ -5,4 +5,4 @@ function onDisconnect({ message }) {
   window.location.reload();
 }
 
-export default [takeEvery('DISCONNECT', onDisconnect)];
+export default [takeEvery('CLIENT_DISCONNECTED', onDisconnect)];

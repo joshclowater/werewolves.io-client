@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import angel from 'src/assets/angel.svg';
-import villager from 'src/assets/villager.svg';
-import werewolf from 'src/assets/wolf.svg';
+import angel from 'src/assets/images/angel.svg';
+import villager from 'src/assets/images/villager.svg';
+import werewolf from 'src/assets/images/wolf.svg';
 
 const Wrapper = styled.div`
   text-align: center;
@@ -13,7 +13,7 @@ const Avatar = styled.img`
 `;
 
 const Description = styled.div`
-  margin 4vh 5vw;
+  margin: 4vh 5vw;
 `;
 
 export default function({ role }) {
@@ -29,7 +29,7 @@ export default function({ role }) {
     avatar = werewolf;
     alt = 'Werewolf';
     description =
-      'You are a werewolf. You will win by killing the villagers before they kill you during the day.';
+      'You are a werewolf. You will win by killing the villagers at night before they kill you during the day.';
   } else if (role === 'deceased') {
     avatar = angel;
     alt = 'Deceased';

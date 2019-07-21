@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import logo from 'src/assets/wolf.svg';
+import logo from 'src/assets/images/wolf.svg';
 import ButtonComponent from 'src/components/Button';
 import Centered from 'src/components/Centered';
 
