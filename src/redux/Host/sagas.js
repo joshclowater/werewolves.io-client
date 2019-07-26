@@ -46,7 +46,7 @@ function* onSubmittedVillagerPick() {
 }
 
 function* onDayEnded() {
-  yield delay(5000);
+  yield delay(8000);
   socket.emit('START_NIGHT');
 }
 

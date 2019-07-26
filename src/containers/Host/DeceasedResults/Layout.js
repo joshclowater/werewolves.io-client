@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
+import { playAsync as play } from 'src/utils/sound';
 import everyoneOpenTheirEyes from 'src/assets/sounds/everyone-open-eyes.mp3';
 import nobodyKilled from 'src/assets/sounds/nobody-killed.mp3';
+import villageKilled from 'src/assets/sounds/village-killed.mp3';
 import voteWerewolf from 'src/assets/sounds/vote-on-werewolf.mp3';
 import werewolvesKilled from 'src/assets/sounds/werewolves-killed.mp3';
 
@@ -30,17 +32,8 @@ const Player = styled.div`
 
 const Instructions = styled.div`
   font-size: 3vh;
-  padding-top: 5vh;
+  padding: 5vh 10vw 0;
 `;
-
-function play(audioFile) {
-  return new Promise(function(resolve, reject) {
-    const audio = new Audio(audioFile);
-    audio.onerror = reject;
-    audio.onended = resolve;
-    audio.play();
-  });
-}
 
 export default class DeceasedResults extends Component {
   componentDidMount = async () => {
@@ -51,6 +44,16 @@ export default class DeceasedResults extends Component {
       await play(nobodyKilled);
     }
     await play(voteWerewolf);
+  };
+
+  componentDidUpdate = async prevProps => {
+    if (prevProps.status === 'day' && this.props.status === 'day-ended') {
+      if (this.props.newlyDeceased.length) {
+        await play(villageKilled);
+      } else {
+        await play(nobodyKilled);
+      }
+    }
   };
 
   render() {
@@ -96,7 +99,7 @@ export default class DeceasedResults extends Component {
         {status === 'day' && (
           <Instructions>
             {`All remaining living members of the village can discuss who they think the werewolf is. 
-            Vote on who you think is the werewolf.
+            Vote on who you think is a werewolf.
             The member of the village with the most votes will be killed.`}
           </Instructions>
         )}

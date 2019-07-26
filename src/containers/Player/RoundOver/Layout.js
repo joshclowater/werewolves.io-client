@@ -1,5 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import Button from 'src/components/Button';
+
+const Result = styled.div`
+  text-align: center;
+  font-size: 4vh;
+  margin-bottom: 5vh;
+`;
 
 const refreshPage = () => {
   window.location.reload(false);
@@ -7,7 +14,7 @@ const refreshPage = () => {
 
 export default ({ win }) => (
   <div id="roundOver">
-    {win ? 'You won!' : 'You lost'}
+    <Result>{win ? 'You won!' : 'You lost'}</Result>
     <Button id="playAgain" onClick={refreshPage}>
       Play again
     </Button>

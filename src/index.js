@@ -7,8 +7,6 @@ import App from 'src/containers/App';
 
 import './index.css';
 
-// const store = configureAppStore();
-
 const render = Component => {
   return ReactDOM.render(
     <Provider store={store}>
