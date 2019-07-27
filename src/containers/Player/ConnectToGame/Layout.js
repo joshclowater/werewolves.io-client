@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Button from 'src/components/Button';
 import InputField from 'src/components/InputField';
 
+const lowerCase = value => value && value.toLowerCase();
+
 const Form = styled.form`
   width: 50vw;
   min-width: 200px;
@@ -18,6 +20,7 @@ export default function PlayerConnectToGame(props) {
         placeholder="Enter a 5-letter game id"
         autoComplete="off"
         maxLength="5"
+        normalize={lowerCase}
       />
       <InputField
         name="name"
