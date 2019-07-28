@@ -22,8 +22,13 @@ function* onNightStarted() {
 }
 
 function* onSubmittedWolfPick() {
-  const { werewolfPicks, werewolves } = yield select(state => state.host);
-  if (Object.values(werewolfPicks).length === werewolves.length) {
+  const { werewolfPicks, werewolves, deceased } = yield select(
+    state => state.host
+  );
+  const livingWerewolves = werewolves.filter(
+    werewolf => !deceased.includes(werewolf)
+  );
+  if (Object.values(werewolfPicks).length === livingWerewolves.length) {
     socket.emit('END_WEREWOLVES_PICK');
   }
 }
