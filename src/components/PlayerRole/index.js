@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import angel from 'src/assets/images/angel.svg';
-import villager from 'src/assets/images/villager.svg';
-import werewolf from 'src/assets/images/wolf.svg';
+import angel from 'assets/images/angel.svg';
+import villager from 'assets/images/villager.svg';
+import werewolf from 'assets/images/wolf.svg';
 
 const Wrapper = styled.div`
   text-align: center;

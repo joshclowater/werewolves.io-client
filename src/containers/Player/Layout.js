@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { initSocket } from 'src/socket';
+import { initSocket } from 'socket';
 
-import CenteredScreen from 'src/components/Centered/CenteredScreen';
-import LoadingMessage from 'src/components/LoadingMessage';
-import PlayerRole from 'src/components/PlayerRole';
+import CenteredScreen from 'components/Centered/CenteredScreen';
+import LoadingMessage from 'components/LoadingMessage';
+import PlayerRole from 'components/PlayerRole';
 import ConnectToGame from './ConnectToGame';
 import RoundOver from './RoundOver';
 import RoundStarted from './RoundStarted';

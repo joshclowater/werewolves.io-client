@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { initSocket } from 'src/socket';
+import { initSocket } from 'socket';
 
-import CenteredScreen from 'src/components/Centered/CenteredScreen';
-import LoadingMessage from 'src/components/LoadingMessage';
+import CenteredScreen from 'components/Centered/CenteredScreen';
+import LoadingMessage from 'components/LoadingMessage';
 import DeceasedResults from './DeceasedResults';
 import Night from './Night';
 import RoundOver from './RoundOver';

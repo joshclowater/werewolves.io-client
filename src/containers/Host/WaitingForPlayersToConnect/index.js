@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { startingGame } from 'src/redux/Host';
+import { startingGame } from 'redux/Host';
 import Layout from './Layout';
 
 export function mapStateToProps({ host }) {

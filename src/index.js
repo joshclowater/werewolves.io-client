@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import store from 'src/redux/store';
-import App from 'src/containers/App';
+import store from 'redux/store';
+import App from 'containers/App';
 
 import './index.css';
 
@@ -19,8 +19,8 @@ const render = Component => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('src/containers/App', () => {
-    const NextApp = require('src/containers/App').default;
+  module.hot.accept('containers/App', () => {
+    const NextApp = require('containers/App').default;
     render(NextApp);
   });
 }

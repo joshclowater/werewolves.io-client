@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from 'src/components/Button';
-import RadioGroupField from 'src/components/RadioGroupField';
+import Button from 'components/Button';
+import RadioGroupField from 'components/RadioGroupField';
 
 const Wrapper = styled.div`
   margin: 0 10vw;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from 'src/components/Button';
+import Button from 'components/Button';
 
 const Wrapper = styled.div`
   text-align: center;

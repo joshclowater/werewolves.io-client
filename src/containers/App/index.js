@@ -1,12 +1,12 @@
 import React, { Fragment, Suspense, lazy } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
-import CenteredScreen from 'src/components/Centered/CenteredScreen';
-import LoadingMessage from 'src/components/LoadingMessage';
-import LandingPage from 'src/containers/LandingPage';
+import CenteredScreen from 'components/Centered/CenteredScreen';
+import LoadingMessage from 'components/LoadingMessage';
+import LandingPage from 'containers/LandingPage';
 
-const Host = lazy(() => import('src/containers/Host'));
-const Player = lazy(() => import('src/containers/Player'));
+const Host = lazy(() => import('containers/Host'));
+const Player = lazy(() => import('containers/Player'));
 
 const fallback = (
   <CenteredScreen>

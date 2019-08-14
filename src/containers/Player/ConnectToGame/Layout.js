@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from 'src/components/Button';
-import InputField from 'src/components/InputField';
+import Button from 'components/Button';
+import InputField from 'components/InputField';
 
 const lowerCase = value => value && value.toLowerCase();
 

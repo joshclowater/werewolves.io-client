@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import logo from 'src/assets/images/wolf.svg';
-import ButtonComponent from 'src/components/Button';
-import Centered from 'src/components/Centered';
+import logo from 'assets/images/wolf.svg';
+import ButtonComponent from 'components/Button';
+import Centered from 'components/Centered';
 
 const Wrapper = styled.div`
   display: flex;

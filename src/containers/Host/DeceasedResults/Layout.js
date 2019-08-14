@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
-import { playAsync as play } from 'src/utils/sound';
-import everyoneOpenTheirEyes from 'src/assets/sounds/everyone-open-eyes.mp3';
-import nobodyKilled from 'src/assets/sounds/nobody-killed.mp3';
-import villageKilled from 'src/assets/sounds/village-killed.mp3';
-import voteWerewolf from 'src/assets/sounds/vote-on-werewolf.mp3';
-import werewolvesKilled from 'src/assets/sounds/werewolves-killed.mp3';
+import { playAsync as play } from 'utils/sound';
+import everyoneOpenTheirEyes from 'assets/sounds/everyone-open-eyes.mp3';
+import nobodyKilled from 'assets/sounds/nobody-killed.mp3';
+import villageKilled from 'assets/sounds/village-killed.mp3';
+import voteWerewolf from 'assets/sounds/vote-on-werewolf.mp3';
+import werewolvesKilled from 'assets/sounds/werewolves-killed.mp3';
 
 const Wrapper = styled.div`
   text-align: center;

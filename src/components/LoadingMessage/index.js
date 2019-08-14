@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from 'src/components/Loading';
+import Loading from 'components/Loading';
 
 export default function({ message, ...rest }) {
   return (

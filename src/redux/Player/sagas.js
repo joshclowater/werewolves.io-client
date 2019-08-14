@@ -1,6 +1,6 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { startSubmit, stopSubmit } from 'redux-form';
-import { socket } from 'src/socket';
+import { socket } from 'socket';
 
 function* onSubmitConnectToGame({ values }) {
   yield put(startSubmit('playerConnectToGame'));

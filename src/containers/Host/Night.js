@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import night from 'src/assets/sounds/night.mp3';
+import night from 'assets/sounds/night.mp3';
 
 export default class RoundStarted extends Component {
   componentDidMount() {

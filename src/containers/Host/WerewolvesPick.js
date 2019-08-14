@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import werewolvesOpenEyes from 'src/assets/sounds/werewolves-open-eyes.mp3';
+import werewolvesOpenEyes from 'assets/sounds/werewolves-open-eyes.mp3';
 
 export default class RoundStarted extends Component {
   componentDidMount() {

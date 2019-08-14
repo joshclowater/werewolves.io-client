@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import PlayerRole from 'src/components/PlayerRole';
+import PlayerRole from 'components/PlayerRole';
 
 export function mapStateToProps({ player }) {
   return {

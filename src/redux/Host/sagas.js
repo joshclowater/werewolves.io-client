@@ -1,5 +1,5 @@
 import { delay, takeEvery, select } from 'redux-saga/effects';
-import { socket } from 'src/socket';
+import { socket } from 'socket';
 import { startingGame } from './';
 
 function onStartingGame() {

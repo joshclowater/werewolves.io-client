@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Button from 'src/components/Button';
+import Button from 'components/Button';
 
-import werewolvesWin from 'src/assets/sounds/werewolves-win.mp3';
-import villagersWin from 'src/assets/sounds/villagers-win.mp3';
+import werewolvesWin from 'assets/sounds/werewolves-win.mp3';
+import villagersWin from 'assets/sounds/villagers-win.mp3';
 
 const Wrapper = styled.div`
   text-align: center;

@@ -1,4 +1,4 @@
-import { isEmpty } from 'src/utils/string';
+import { isEmpty } from 'utils/string';
 
 export default values => {
   const errors = {};

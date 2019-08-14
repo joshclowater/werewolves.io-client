@@ -1,8 +1,8 @@
 import { takeEvery } from 'redux-saga/effects';
 
-function onDisconnect({ message }) {
+function onHostDisconnect({ message }) {
   alert(message);
   window.location.reload();
 }
 
-export default [takeEvery('CLIENT_DISCONNECTED', onDisconnect)];
+export default [takeEvery('HOST_DISCONNECTED', onHostDisconnect)];
